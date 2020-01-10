@@ -21,14 +21,14 @@ char MapPrinter::printField(const Field& field)
 std::string MapPrinter::printRoom(const Room& room)
 {
     auto fields = room.getFields();
-    std::string row = "";
+    std::string room = "";
     for(auto i = 0u; i < fields.size(); i++)
     {
-        row += printField(*fields.at(i));
-        if(i == std::sqrt(fields.size()))
+        room += printField(*fields.at(i));
+        if(i == std::sqrt(fields.size()) - 1)
         {
-            row += "\n";
+            room += "\n";
         }
     }
-    return row;
+    return room;
 }
