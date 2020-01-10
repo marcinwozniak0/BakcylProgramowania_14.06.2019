@@ -6,5 +6,5 @@
 class Room
 {
 public:
-    virtual std::vector<std::shared_ptr<Field>> getFields() = 0;
+    virtual std::vector<std::shared_ptr<Field>> getFields() const = 0;
 };

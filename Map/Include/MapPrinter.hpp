@@ -1,8 +1,11 @@
 #pragma once
 #include "Field.hpp"
+#include "Room.hpp"
+#include <string>
 
 class MapPrinter
 {
 public:
-    FieldType printField(const Field& field);
+    char printField(const Field& field);
+    std::string printRoom(const Room& room);
 };
