@@ -7,11 +7,11 @@
 
 using namespace ::testing;
 
-TEST(MapPrinterTest, PrintStandardFieldShouldReturnZero)
+TEST(MapPrinterTest, PrintStandardFieldShouldReturnDot)
 {
     MapPrinter printer;
     EmptyField emptyfield;
-    ASSERT_EQ('0', printer.printField(emptyfield));
+    ASSERT_EQ('.', printer.printField(emptyfield));
 }
 
 TEST(MapPrinterTest, PrintFightFieldShouldReturnF)
@@ -39,5 +39,5 @@ TEST(MapPrinterTest, fooooo)
     CommonRoom commonRoom(fields);
 
      MapPrinter printer;
-     ASSERT_EQ("F0\nT0", printer.printRoom(commonRoom));
+     ASSERT_EQ("#######\n# F . #\n# T . #\n#######", printer.printRoom(commonRoom));
 }

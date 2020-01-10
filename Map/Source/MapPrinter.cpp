@@ -14,21 +14,39 @@ char MapPrinter::printField(const Field& field)
     }
     else
     {
-        return '0';
+        return '.';
     }
 }
 
 std::string MapPrinter::printRoom(const Room& room)
 {
     auto fields = room.getFields();
-    std::string room = "";
+    std::string result = "";
+    int width = std::sqrt(fields.size());
+
+    for(int j = 0; j < 2 * width + 3; j++)
+    {
+        result += "#";
+    }
+    result += "\n";
+    result += "#";
+
     for(auto i = 0u; i < fields.size(); i++)
     {
-        room += printField(*fields.at(i));
-        if(i == std::sqrt(fields.size()) - 1)
+        result += " ";
+        result += printField(*fields.at(i));
+        if(i == width - 1u)
         {
-            room += "\n";
+            result += " #\n#";
         }
     }
-    return room;
+
+    result += " #\n";
+
+    for(int j = 0; j < 2 * width + 3; j++)
+    {
+        result += "#";
+    }
+
+    return result;
 }
