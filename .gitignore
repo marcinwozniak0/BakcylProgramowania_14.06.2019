@@ -37,7 +37,10 @@ bin/
 *cmake-build-debug/*
 *build/*
 
-# Cmake generated files
+# Googletest
+googletest-prefix/
+
+# Cmake files
 **/cmake-build-debug
 **/CMakeCache.txt
 **/cmake_install.cmake
@@ -48,4 +51,3 @@ bin/
 **/*.cbp
 **/CMakeScripts
 **/compile_commands.json
-googletest-prefix/
