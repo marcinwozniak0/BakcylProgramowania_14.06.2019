@@ -30,11 +30,22 @@
 *.exe
 *.out
 *.app
+bin/
 
 # Clion files
 *.idea/*
 *cmake-build-debug/*
 *build/*
 
-# Qt files
-*CMakeLists.txt.user
+# Cmake generated files
+**/cmake-build-debug
+**/CMakeCache.txt
+**/cmake_install.cmake
+**/install_manifest.txt
+**/CMakeFiles/
+**/CTestTestfile.cmake
+**/Makefile
+**/*.cbp
+**/CMakeScripts
+**/compile_commands.json
+googletest-prefix/
