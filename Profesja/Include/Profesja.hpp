@@ -1,33 +1,35 @@
 #pragma once
 #include <iostream>
+#include <vector>
+#include <string>
 
 struct Player
 {
-
-  class Profesja
+  unsigned int currentHp = 20;
+  unsigned int power = 1;
+  std::vector <std::string> handdeck = {"karta1", "karta2", "karta3"};
+  class Profession
   {
-  public:
-    virtual void useUlt() = 0;
+   public:
+    virtual void useUlt(Player& p1, Player& p2) = 0;
   };
 
-  class Paladin :public Profesja
+  class Paladin : public Profession
   {
-    void useUlt() override;
-    //heal
+   public:
+    void useUlt(Player& p1, Player& p2) override;
   };
 
-  class Mage :public Profesja
+  class Mage : public Profession
   {
-    void useUlt() override;
-    //zdawianie dmg - fireball
+   public:
+    void useUlt(Player& p1, Player& p2) override;
   };
 
-  class Rogue :public Profesja
+  class Rogue : public Profession
   {
-    void useUlt() override;
-    //zabiera karte z enemy handdeck
+   public:
+    void useUlt(Player& p1, Player& p2) override;
   };
-  //HP _HP;
-  //MP _MP;
 
 };
