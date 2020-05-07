@@ -8,6 +8,7 @@
 #include <sstream>
 #include <stdexcept>
 #include <vector>
+#include <WallField.hpp>
 
 const FieldList& SquareMap::getFields()
 {
@@ -144,12 +145,19 @@ void SquareMap::markPlayerPosition(std::string& str, const Position& playerPosit
 
 SquareMap::SquareMap(const int mapSize)
 {
-    for(int x = 0; x < mapSize; x++)
+    for(int x = -1; x <= mapSize; x++)
     {
         std::vector<std::unique_ptr<Field>> column;
-        for(int y = 0; y < mapSize; y++)
+        for(int y = -1; y <= mapSize; y++)
         {
-            column.emplace_back(std::make_unique<EmptyField>());
+            if((x == -1 || y == -1) && (x == mapSize || y == mapSize))
+            {
+                column.emplace_back(std::make_unique<WallField>());
+            }
+            else
+            {
+                column.emplace_back(std::make_unique<EmptyField>());
+            }
         }
 
         _fieldList.emplace_back(std::move(column));
