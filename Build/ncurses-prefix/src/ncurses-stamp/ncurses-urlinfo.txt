@@ -1,0 +1,3 @@
+repository='external project URL'
+module='http://download.draios.com/dependencies/ncurses-6.0-20150725.tgz'
+tag='MD5=32b8913312e738d707ae68da439ca1f4'

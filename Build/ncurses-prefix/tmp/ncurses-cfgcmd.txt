@@ -1,0 +1,1 @@
+cmd='./configure;--without-cxx;--without-cxx-binding;--without-ada;--without-manpages;--without-progs;--without-tests;--with-terminfo-dirs=/etc/terminfo:/lib/terminfo:/usr/share/terminfo'
