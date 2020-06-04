@@ -16,8 +16,6 @@ set(EXECUTABLE_OUTPUT_PATH ${PROJECT_BINARY_DIR}/bin)
 include(External_GTest.cmake)
 
 # SRC
-include_directories(Map/Include)
-add_subdirectory(Map/Source)
 include_directories(Combat/Cards/Include)
 add_subdirectory(Combat/Cards/Source)
 include_directories(Combat/Profesja/Include)
@@ -26,10 +24,9 @@ include_directories(Combat/Decks/Include)
 add_subdirectory(Combat/Decks/Source)
 include_directories(Combat/Table/Include)
 add_subdirectory(Combat/Table/Source)
-
+include_directories(Map/Include)
+add_subdirectory(Map/Source)
 # TEST
-include_directories(Map/Test)
-add_subdirectory(Map/Test)
 include_directories(Combat/Cards/Test)
 add_subdirectory(Combat/Cards/Test)
 include_directories(Combat/Profesja/Test)
@@ -38,6 +35,9 @@ include_directories(Combat/Decks/Test)
 add_subdirectory(Combat/Decks/Test)
 include_directories(Combat/Table/Test)
 add_subdirectory(Combat/Table/Test)
+include_directories(Map/Test)
+add_subdirectory(Map/Test)
+
 
 add_library(source_objects_lib OBJECT ${SOURCES})
 
