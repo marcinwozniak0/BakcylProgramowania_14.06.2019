@@ -1,5 +1,6 @@
 #include <iostream>
 #include "Game.hpp"
+#include <cctype>
 
 Direction Game::getDirection()
 {
